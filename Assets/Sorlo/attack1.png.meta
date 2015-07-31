@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: 37fa7fd002ec5c64a95d2f2c6f850f08
-timeCreated: 1438366355
+guid: 7081987abe7feee45968678898eb6177
+timeCreated: 1438370407
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: walk_mod_del_0
-    21300002: walk_mod_del_1
-    21300004: walk_mod_del_2
-    21300006: walk_mod_del_3
-    21300008: walk_mod_del_4
-    21300010: walk_mod_del_5
+    21300000: attack1_0
+    21300002: attack1_1
+    21300004: attack1_2
+    21300006: attack1_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,62 +53,42 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: walk_mod_del_0
+    - name: attack1_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 415
+        x: 0
+        y: 1
         width: 46
         height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_mod_del_1
+    - name: attack1_1
       rect:
         serializedVersion: 2
-        x: 174
-        y: 415
-        width: 47
+        x: 59
+        y: 1
+        width: 54
         height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_mod_del_2
+    - name: attack1_2
       rect:
         serializedVersion: 2
-        x: 233
-        y: 417
-        width: 43
+        x: 116
+        y: 1
+        width: 74
         height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_mod_del_3
+    - name: attack1_3
       rect:
         serializedVersion: 2
-        x: 45
-        y: 333
-        width: 45
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_mod_del_4
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 333
-        width: 43
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_mod_del_5
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 333
-        width: 43
+        x: 198
+        y: 0
+        width: 77
         height: 69
       alignment: 0
       pivot: {x: 0, y: 0}

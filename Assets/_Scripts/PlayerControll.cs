@@ -3,8 +3,7 @@ using System.Collections;
 
 public class PlayerControll : MonoBehaviour {
 	public GameObject players;
-	public float limiteRigth;
-	public float limiteLeft;
+
 	public float speed;
 	public Animator Anime;
 
@@ -21,12 +20,7 @@ public class PlayerControll : MonoBehaviour {
 
 		players.transform.Translate (translation, 0 , 0);
 
-		if (players.transform.position.x > limiteRigth) { 
-			players.transform.position = new Vector2(limiteRigth, players.transform.position.y);
-		}
-		if (players.transform.position.x < limiteLeft) { 
-			players.transform.position = new Vector2(limiteLeft, players.transform.position.y);
-		}
+
 
 		if(Input.GetKeyDown(KeyCode.UpArrow) || (players.transform.position.y <= 0))
 		{
@@ -43,6 +37,14 @@ public class PlayerControll : MonoBehaviour {
 		}
 		else
 			Anime.SetBool("Walk",false);
+
+		if(Input.GetKey(KeyCode.Space))
+		{
+			Anime.SetBool("Attack",true);
+			print ("space key was pressed");
+		}
+		else 
+			Anime.SetBool("Attack", false);
 
 
 
