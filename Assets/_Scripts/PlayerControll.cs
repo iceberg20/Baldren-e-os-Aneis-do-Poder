@@ -6,12 +6,14 @@ public class PlayerControll : MonoBehaviour {
 
 	public float speed;
 	public Animator Anime;
-	public AudioSource som;
-
+	public AudioSource somPulo;
+	public AudioClip somHit;
+	
 	public Rigidbody2D	PlayerRigdbod;
 	public int 			Force;
 	// Use this for initpublic ialization
 	void Start () {	
+
 	
 	}
 	
@@ -26,7 +28,7 @@ public class PlayerControll : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.UpArrow) || (players.transform.position.y <= 0))
 		{
 			PlayerRigdbod.AddForce(new Vector2(0,Force));
-			som.Play ();
+			somPulo.Play();
 		}
 
 		if(Input.GetKey(KeyCode.RightArrow) ||  Input.GetKey(KeyCode.LeftArrow))
@@ -43,7 +45,10 @@ public class PlayerControll : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Space))
 		{
 			Anime.SetBool("Attack",true);
-			print ("space key was pressed");
+			somPulo.clip = somHit;
+			if(Input.GetKeyDown(KeyCode.Space))
+				somPulo.Play();
+
 		}
 		else 
 			Anime.SetBool("Attack", false);
