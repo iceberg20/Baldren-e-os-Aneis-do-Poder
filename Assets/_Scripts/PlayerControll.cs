@@ -6,14 +6,15 @@ public class PlayerControll : MonoBehaviour {
 
 	public float speed;
 	public Animator Anime;
-	public AudioSource somPulo;
+	private AudioSource audioPlayer;
 	public AudioClip somHit;
+	public AudioClip somPulo;
 	
 	public Rigidbody2D	PlayerRigdbod;
 	public int 			Force;
 	// Use this for initpublic ialization
 	void Start () {	
-
+		audioPlayer = GetComponent<AudioSource>();
 	
 	}
 	
@@ -28,11 +29,12 @@ public class PlayerControll : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.UpArrow) || (players.transform.position.y <= 0))
 		{
 			PlayerRigdbod.AddForce(new Vector2(0,Force));
-			somPulo.Play();
+			audioPlayer.clip = somPulo; 
+			audioPlayer.Play();
 		}
 
 		if(Input.GetKey(KeyCode.RightArrow) ||  Input.GetKey(KeyCode.LeftArrow))
-		{
+		{	
 			Anime.SetBool("Walk",true);
 			if(Input.GetKey(KeyCode.RightArrow))
 				players.transform.localScale = new Vector3(1,1,1);
@@ -45,9 +47,9 @@ public class PlayerControll : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Space))
 		{
 			Anime.SetBool("Attack",true);
-			somPulo.clip = somHit;
+			audioPlayer.clip = somHit;
 			if(Input.GetKeyDown(KeyCode.Space))
-				somPulo.Play();
+				audioPlayer.Play();
 
 		}
 		else 
