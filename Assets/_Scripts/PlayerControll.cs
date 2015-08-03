@@ -9,6 +9,7 @@ public class PlayerControll : MonoBehaviour {
 	private AudioSource audioPlayer;
 	public AudioClip somHit;
 	public AudioClip somPulo;
+	public AudioClip somHitEletrico;
 	
 	public Rigidbody2D	PlayerRigdbod;
 	public int 			Force;
@@ -50,10 +51,19 @@ public class PlayerControll : MonoBehaviour {
 			audioPlayer.clip = somHit;
 			if(Input.GetKeyDown(KeyCode.Space))
 				audioPlayer.Play();
-
 		}
 		else 
 			Anime.SetBool("Attack", false);
+
+		if(Input.GetKey(KeyCode.E))
+		{
+			Anime.SetBool("Attack_Eletrico",true);
+			audioPlayer.clip = somHitEletrico;
+			if(Input.GetKeyDown(KeyCode.E))
+				audioPlayer.Play();
+		}
+		else 
+			Anime.SetBool("Attack_Eletrico", false);
 
 
 
