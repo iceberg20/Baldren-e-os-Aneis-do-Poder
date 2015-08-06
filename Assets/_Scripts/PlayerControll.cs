@@ -14,21 +14,35 @@ public class PlayerControll : MonoBehaviour {
 	public Rigidbody2D	PlayerRigdbod;
 	public int 			Force;
 	// Use this for initpublic ialization
+
+	void Awake()
+	{
+		// Setting up references.
+		groundCheck = transform.Find("groundCheck");
+	}
 	void Start () {	
 		audioPlayer = GetComponent<AudioSource>();
 	
 	}
-	
+	//Igor script
+	public bool jump = false;
+	private Transform groundCheck;			// A position marking where to check if the player is grounded.
+	private bool grounded = false;			// Whether or not the player is grounded.
+
 	// Update is called once per frame
 	void Update () {
+		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
+		grounded = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.1f);  
+
 		float translation = Input.GetAxis("Horizontal")*speed;
 
 		players.transform.Translate (translation, 0 , 0);
 
 
 
-		if(Input.GetKeyDown(KeyCode.UpArrow) || (players.transform.position.y <= 0))
+		if(Input.GetKeyDown(KeyCode.UpArrow) && grounded)
 		{
+			jump = true;
 			PlayerRigdbod.AddForce(new Vector2(0,Force));
 			audioPlayer.clip = somPulo; 
 			audioPlayer.Play();
@@ -64,10 +78,7 @@ public class PlayerControll : MonoBehaviour {
 		}
 		else 
 			Anime.SetBool("Attack_Eletrico", false);
-
-
-
-
-	
 	}
+
+
 }	
