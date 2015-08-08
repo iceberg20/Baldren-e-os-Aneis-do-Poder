@@ -50,6 +50,6 @@ function fancyAlert(arg) {
 - [ ] this is an incomplete item
 - 
 ** Strikethrough **
-~~ Tarefa terminada~~
+~~Tarefa terminada~~
 
 :sunny:
