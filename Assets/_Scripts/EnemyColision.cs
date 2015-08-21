@@ -10,10 +10,12 @@ public class EnemyColision : MonoBehaviour {
 	private float time;
 	private float hit_time_end;
 	private bool hited;
+	private AudioSource som;
 
 	// Use this for initialization
 	void Start () {
 		time = 7.0f;
+		som = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -22,26 +24,25 @@ public class EnemyColision : MonoBehaviour {
 		if(inimigo.IsTouching(heroi) && time >1.0f) {
 			Debug.Log("Colidiu");	
 			time=0.0f;
-			reduzirVida(20);
-
+			reduzirVida(0.02f);
 		}
 	}
 
 	//O parametro valor e uma porcentagem de 0% a 100%
 	void reduzirVida(float  valor)
 	{
-		float p = (valor - 100)/-100;
+		//float p = (valor - 100)/-100;
 		if(life_bar.localScale.x < 0.01)
 			Application.LoadLevel("gameOver");
-		life_bar.localScale = new Vector3(life_bar.localScale.x *p, life_bar.localScale.y ,life_bar.localScale.z);
+		life_bar.localScale = new Vector3(life_bar.localScale.x -valor, life_bar.localScale.y ,life_bar.localScale.z);
 		//Vector3 v =  new Vector3(life_bar.transform.position.x, life_bar.transform.position.y, life_bar.transform.position.z);
-		if (life_bar.transform.position.x> -2.8)
-			life_bar.transform.Translate(Vector3.left*0.16f);
+		if (life_bar.transform.position.x> -2.9)
+			life_bar.transform.Translate(Vector3.left*0.1f);
 			
 
 		Debug.Log(life_bar.transform.localScale.x);
 
-		Debug.Log(p);
+		//Debug.Log(p);
 	}
 
 
