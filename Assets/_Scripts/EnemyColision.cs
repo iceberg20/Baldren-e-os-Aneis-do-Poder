@@ -10,12 +10,12 @@ public class EnemyColision : MonoBehaviour {
 	private float time;
 	private float hit_time_end;
 	private bool hited;
-	private AudioSource som;
+	//private AudioSource som;
 
 	// Use this for initialization
 	void Start () {
 		time = 7.0f;
-		som = gameObject.GetComponent<AudioSource>();
+		//som = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
