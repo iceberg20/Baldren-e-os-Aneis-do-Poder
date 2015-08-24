@@ -10,7 +10,10 @@ public class PlayerControll : MonoBehaviour {
 	public AudioClip somHit;
 	public AudioClip somPulo;
 	public AudioClip somHitEletrico;
-	
+	//mana
+	public RectTransform manaBar;
+	public float mana;
+	private float delayEletrico;
 	public Rigidbody2D	PlayerRigdbod;
 	public int 			Force;
 	// Use this for initpublic ialization
@@ -19,10 +22,11 @@ public class PlayerControll : MonoBehaviour {
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
+		mana = 301.7f;
 	}
 	void Start () {	
 		audioPlayer = GetComponent<AudioSource>();
-	
+		delayEletrico = 4.0f;	
 	}
 	//Igor script
 	public bool jump = false;
@@ -69,15 +73,36 @@ public class PlayerControll : MonoBehaviour {
 		else 
 			Anime.SetBool("Attack", false);
 
-		if(Input.GetKey(KeyCode.E))
+		//cooldown
+		delayEletrico += Time.deltaTime;
+		Debug.Log(delayEletrico);
+
+		if(Input.GetKey(KeyCode.E) && mana>10.0f )
 		{
 			Anime.SetBool("Attack_Eletrico",true);
+			mana = mana -5;
+			delayEletrico=0.0f;
+			reduzirMana(5.0f);
+		
 			audioPlayer.clip = somHitEletrico;
-			if(Input.GetKeyDown(KeyCode.E))
-				audioPlayer.Play();
+
+			audioPlayer.Play();
+
 		}
 		else 
 			Anime.SetBool("Attack_Eletrico", false);
+	}
+
+	void reduzirMana(float valor){
+		if(manaBar.rect.width <= 0)
+			Debug.Log("Voce esta sem mana");
+		else
+		{
+			mana-=valor;
+			manaBar.sizeDelta = new Vector2(mana,15.2f);
+			manaBar.position = new Vector3(manaBar.position.x-valor, manaBar.position.y);
+			
+		}
 	}
 
 
