@@ -22,7 +22,7 @@ public class EnemyColision : MonoBehaviour {
 	void Update () {
 		time += Time.deltaTime;
 		if(inimigo.IsTouching(heroi) && time >1.0f) {
-			Debug.Log("Colidiu");	
+			//Debug.Log("Colidiu");	
 			time=0.0f;
 			reduzirVida(0.02f);
 		}
@@ -40,7 +40,7 @@ public class EnemyColision : MonoBehaviour {
 			life_bar.transform.Translate(Vector3.left*0.1f);
 			
 
-		Debug.Log(life_bar.transform.localScale.x);
+		//Debug.Log(life_bar.transform.localScale.x);
 
 		//Debug.Log(p);
 	}

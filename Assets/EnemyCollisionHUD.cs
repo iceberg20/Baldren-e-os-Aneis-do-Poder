@@ -17,12 +17,12 @@ public class EnemyCollisionHUD : MonoBehaviour {
 	void Update () {
 		time += Time.deltaTime;
 		if(inimigo.IsTouching(heroi) && time >1.0f) {
-			Debug.Log("Colidiu");	
+			//Debug.Log("Colidiu");	
 			time=0.0f;
 			reduzirVida(10.0f);
 		}
 
-		Debug.Log(life.rect.width);
+	//	Debug.Log(life.rect.width);
 
 	}
 

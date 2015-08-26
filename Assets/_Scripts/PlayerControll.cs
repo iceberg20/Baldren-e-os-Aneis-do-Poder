@@ -38,7 +38,22 @@ public class PlayerControll : MonoBehaviour {
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.1f);  
 
+
+
 		float translation = Input.GetAxis("Horizontal")*speed;
+		Debug.Log(players.transform.position.x);
+		bool locked = false;
+		if(players.transform.position.x< -9.704f) {
+			speed = 0.0f;
+			locked = true;
+		}
+		if(locked && (Input.GetKey(KeyCode.RightArrow))){
+			speed = 0.01f;
+		    locked = false;
+
+			translation = Input.GetAxis("Horizontal")*speed;
+		}
+
 
 		players.transform.Translate (translation, 0 , 0);
 
@@ -59,6 +74,9 @@ public class PlayerControll : MonoBehaviour {
 				players.transform.localScale = new Vector3(1,1,1);
 			else
 				players.transform.localScale = new Vector3(-1,1,1);
+
+
+				
 		}
 		else
 			Anime.SetBool("Walk",false);
@@ -75,9 +93,9 @@ public class PlayerControll : MonoBehaviour {
 
 		//cooldown
 		delayEletrico += Time.deltaTime;
-		Debug.Log(delayEletrico);
+		//Debug.Log(delayEletrico);
 
-		if(Input.GetKey(KeyCode.E) && mana>10.0f )
+		if(Input.GetKey(KeyCode.E) && mana>10.0f && !Anime.GetBool("Walk"))
 		{
 			Anime.SetBool("Attack_Eletrico",true);
 			mana = mana -5;
