@@ -43,7 +43,7 @@ public class PlayerControll : MonoBehaviour {
 		float translation = Input.GetAxis("Horizontal")*speed;
 		Debug.Log(players.transform.position.x);
 		bool locked = false;
-		if(players.transform.position.x< -9.704f) {
+		if(players.transform.position.x< -11.82) {
 			speed = 0.0f;
 			locked = true;
 		}

@@ -49,6 +49,7 @@
      <Compile Include="Assets\EnemyCollisionHUD.cs" />
      <Compile Include="Assets\ScriptMana.cs" />
      <Compile Include="Assets\_Scripts\Camera2DFollow.cs" />
+     <Compile Include="Assets\_Scripts\CameraFollow.cs" />
      <Compile Include="Assets\_Scripts\EnemyBehavior.cs" />
      <Compile Include="Assets\_Scripts\EnemyColision.cs" />
      <Compile Include="Assets\_Scripts\PlayerControll.cs" />
