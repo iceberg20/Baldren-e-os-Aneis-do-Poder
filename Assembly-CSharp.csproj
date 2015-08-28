@@ -55,6 +55,7 @@
      <Compile Include="Assets\_Scripts\EnemyColision.cs" />
      <Compile Include="Assets\_Scripts\PlayerControll.cs" />
      <Compile Include="Assets\_Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\spikes.cs" />
      <Compile Include="Assets\step1.cs" />
      <Compile Include="Assets\walk.cs" />
  <Reference Include="UnityEngine.UI">
