@@ -16,7 +16,7 @@ public class spikes : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
-		if(espinhos.IsTouching(heroi) && time >1.0f) {
+		if(espinhos.IsTouching(heroi) && time >0.1f) {
 			//Debug.Log("Colidiu");	
 			time=0.0f;
 			reduzirVida(10.0f);
