@@ -18,7 +18,7 @@ public class Tutor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log(heroi.transform.position.x);
+		//Debug.Log(heroi.transform.position.x);
 		if(heroi.transform.position.x >=-7.0f && !step1){
 			text.text = "Aperte para cima para pular!";
 			step1= true;
