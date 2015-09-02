@@ -15,7 +15,6 @@ public class life_potion : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(heroi.IsTouching(potion)) {
-			//Debug.Log("Colidiu");	
 
 			aumentarVida(1f);
 		}
