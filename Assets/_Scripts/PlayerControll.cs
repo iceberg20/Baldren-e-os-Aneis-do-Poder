@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerControll : MonoBehaviour {
 	public GameObject players;
 
+
 	public float speed;
 	public Animator Anime;
 	private AudioSource audioPlayer;
@@ -23,6 +24,7 @@ public class PlayerControll : MonoBehaviour {
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		mana = 301.7f;
+
 	}
 	void Start () {	
 		audioPlayer = GetComponent<AudioSource>();
@@ -35,6 +37,7 @@ public class PlayerControll : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(mana);
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.1f);  
 
@@ -95,6 +98,8 @@ public class PlayerControll : MonoBehaviour {
 		delayEletrico += Time.deltaTime;
 		//Debug.Log(delayEletrico);
 
+
+
 		if(Input.GetKey(KeyCode.E) && mana>10.0f && !Anime.GetBool("Walk"))
 		{
 			Anime.SetBool("Attack_Eletrico",true);
@@ -122,6 +127,12 @@ public class PlayerControll : MonoBehaviour {
 			
 		}
 	}
+
+	public void fillMana(){
+			mana = 301.7f;
+		}
+
+
 
 
 }	

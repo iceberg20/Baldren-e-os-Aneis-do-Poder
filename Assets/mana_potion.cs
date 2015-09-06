@@ -5,11 +5,12 @@ public class mana_potion : MonoBehaviour {
 	public BoxCollider2D potion;
 	public BoxCollider2D heroi;
 	public RectTransform mana_bar;
-	private float mana;
 	public AudioSource audioPotion;
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
+
 	
 	}
 	
@@ -17,6 +18,7 @@ public class mana_potion : MonoBehaviour {
 	void Update () {
 		if(heroi.IsTouching(potion)) {			
 			aumentarMana(1f);
+			player.GetComponent<PlayerControll>().fillMana();
 		}	
 	}
 

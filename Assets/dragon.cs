@@ -26,7 +26,7 @@ public class dragon : MonoBehaviour {
 			reduzirVida(0.2f);
 		}
 
-		Debug.Log(t.position.x);
+		//Debug.Log(t.position.x);
 
 		if(t.position.x >= 3.67f){
 			if(esquerda){
