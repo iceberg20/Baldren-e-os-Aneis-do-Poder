@@ -37,7 +37,6 @@ public class PlayerControll : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(mana);
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.1f);  
 

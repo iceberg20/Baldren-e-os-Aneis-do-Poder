@@ -56,6 +56,7 @@
      <Compile Include="Assets\_Scripts\PlayerControll.cs" />
      <Compile Include="Assets\_Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\cajado.cs" />
+     <Compile Include="Assets\cajadoEletrico.cs" />
      <Compile Include="Assets\dragon.cs" />
      <Compile Include="Assets\life_potion.cs" />
      <Compile Include="Assets\mana_potion.cs" />
