@@ -60,6 +60,7 @@
      <Compile Include="Assets\dragon.cs" />
      <Compile Include="Assets\life_potion.cs" />
      <Compile Include="Assets\mana_potion.cs" />
+     <Compile Include="Assets\plataforma.cs" />
      <Compile Include="Assets\spikes.cs" />
      <Compile Include="Assets\step1.cs" />
      <Compile Include="Assets\walk.cs" />

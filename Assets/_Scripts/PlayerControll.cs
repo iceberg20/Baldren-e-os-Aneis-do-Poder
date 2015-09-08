@@ -76,8 +76,6 @@ public class PlayerControll : MonoBehaviour {
 				players.transform.localScale = new Vector3(1,1,1);
 			else
 				players.transform.localScale = new Vector3(-1,1,1);
-
-
 				
 		}
 		else

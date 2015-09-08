@@ -9,6 +9,9 @@ public class CameraFollow : MonoBehaviour {
 	public float ySmooth = 8f;        // How smoothly the camera catches up with it's target movement in the y axis.
 	public Vector2 maxXAndY;        // The maximum x and y coordinates the camera can have.
 	public Vector2 minXAndY;        // The minimum x and y coordinates the camera can have.
+	public Transform hero;
+	private bool follow = true;
+	private Transform camera;
 	
 	
 	private Transform player;        // Reference to the player's transform.
@@ -18,6 +21,8 @@ public class CameraFollow : MonoBehaviour {
 	{
 		// Setting up the reference.
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+		camera = gameObject.GetComponent<Transform>(); 
+		follow = true;
 	}
 	
 	
@@ -37,7 +42,21 @@ public class CameraFollow : MonoBehaviour {
 	
 	void FixedUpdate ()
 	{
-		TrackPlayer();
+
+			if(hero.position.x <=13f && follow) 
+				TrackPlayer();
+
+
+		//pare em x=15
+		if(hero.position.x > 13f){
+			if(camera.position.x<15)
+				camera.transform.Translate(Vector3.right* Time.deltaTime);
+
+
+			follow = false;
+		}
+
+
 	}
 	
 	
