@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DragonBoss.cs" />
      <Compile Include="Assets\EnemyCollisionHUD.cs" />
+     <Compile Include="Assets\FireBalll.cs" />
      <Compile Include="Assets\ScriptMana.cs" />
      <Compile Include="Assets\Tutor.cs" />
      <Compile Include="Assets\_Scripts\Camera2DFollow.cs" />
