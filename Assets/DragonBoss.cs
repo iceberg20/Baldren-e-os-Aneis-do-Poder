@@ -9,6 +9,7 @@ public class DragonBoss : MonoBehaviour {
 	private bool fire = false;
 	private bool follow = false;
 
+
 	// Use this for initialization
 	void Start () {
 		boos = gameObject.GetComponent<Transform>();

@@ -5,6 +5,8 @@ public class plataforma : MonoBehaviour {
 	public Transform camera;
 	private Transform plat;
 	public DragonBoss dragonScript;
+	public GameObject stone;
+	private float qtdStone =0f;
 	// Use this for initialization
 	void Start () {
 		plat = gameObject.GetComponent<Transform>();
@@ -19,7 +21,11 @@ public class plataforma : MonoBehaviour {
 			}
 			else{
 				dragonScript.startFire();
-				//dragonScript.startFollow();
+				if(qtdStone <10) {
+					Instantiate(stone,new Vector3(11.2f,qtdStone,0f),Quaternion.identity );
+					qtdStone+=1;
+				}
+
 			}
 		}
 

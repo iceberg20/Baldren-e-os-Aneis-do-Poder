@@ -23,7 +23,7 @@ public class PlayerControll : MonoBehaviour {
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
-		mana = 301.7f;
+		mana = 301.7f; 
 
 	}
 	void Start () {	
