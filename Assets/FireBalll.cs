@@ -11,6 +11,6 @@ public class FireBalll : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		t.Translate(Vector3.left* Time.deltaTime);
+		t.Translate(Vector3.left* (Time.deltaTime*3) );
 	}
 }
