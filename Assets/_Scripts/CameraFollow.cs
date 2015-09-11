@@ -12,7 +12,9 @@ public class CameraFollow : MonoBehaviour {
 	public Transform hero;
 	private bool follow = true;
 	private Transform camera;
-	
+	private float shakeTimer =4f;
+	private float shakePower;
+	private float shakeAmount = 0.03f;
 	
 	private Transform player;        // Reference to the player's transform.
 	
@@ -25,7 +27,7 @@ public class CameraFollow : MonoBehaviour {
 		follow = true;
 	}
 	
-	
+
 	bool CheckXMargin()
 	{
 		// Returns true if the distance between the camera and the player in the x axis is greater than the x margin.
@@ -56,8 +58,24 @@ public class CameraFollow : MonoBehaviour {
 			follow = false;
 		}
 
+		//Let's shake
+		if(shakeTimer >=0 && hero.position.x > 13f){
+			Vector2 shakePos = Random.insideUnitCircle * shakeAmount;
+			shakeTimer-= Time.deltaTime;
+			camera.position = new Vector3(camera.position.x+shakePos.x,camera.position.y+shakePos.y, camera.position.z);
+
+		}
+
 
 	}
+
+	public void shakeCamera(float power, float duration){
+		shakePower = power;
+		shakeTimer = duration;
+	}
+
+
+
 	
 	
 	void TrackPlayer ()
