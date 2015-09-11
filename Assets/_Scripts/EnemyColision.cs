@@ -5,7 +5,6 @@ public class EnemyColision : MonoBehaviour {
 	public BoxCollider2D inimigo;
 	public BoxCollider2D heroi;
 	public Transform life_bar;
-	private float vida;
 	private float hit_time_begin;
 	private float time;
 	private float hit_time_end;
@@ -38,11 +37,7 @@ public class EnemyColision : MonoBehaviour {
 		//Vector3 v =  new Vector3(life_bar.transform.position.x, life_bar.transform.position.y, life_bar.transform.position.z);
 		if (life_bar.transform.position.x> -2.9)
 			life_bar.transform.Translate(Vector3.left*0.1f);
-			
 
-		//Debug.Log(life_bar.transform.localScale.x);
-
-		//Debug.Log(p);
 	}
 
 

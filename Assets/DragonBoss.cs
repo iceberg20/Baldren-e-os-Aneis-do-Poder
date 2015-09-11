@@ -18,7 +18,7 @@ public class DragonBoss : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time+= Time.deltaTime;
-		if(time>1f){
+		if(time>0.5f){
 			if(fire)
 				Instantiate(fireBall,new Vector3(boos.position.x-0.5f, boos.position.y-0.1f,1f),Quaternion.identity);
 
