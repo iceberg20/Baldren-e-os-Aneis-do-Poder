@@ -15,9 +15,11 @@ public class PlayerControll : MonoBehaviour {
 	public RectTransform manaBar;
 	public float mana;
 	private float delayEletrico;
+	private float delayShoot;
 	public Rigidbody2D	PlayerRigdbod;
 	public int 			Force;
-	// Use this for initpublic ialization
+	public GameObject shoot;
+	private Transform hero;
 
 	void Awake()
 	{
@@ -29,6 +31,8 @@ public class PlayerControll : MonoBehaviour {
 	void Start () {	
 		audioPlayer = GetComponent<AudioSource>();
 		delayEletrico = 4.0f;	
+		delayEletrico = 4.0f;	
+		hero = gameObject.GetComponent<Transform>();
 	}
 	//Igor script
 	public bool jump = false;
@@ -93,11 +97,17 @@ public class PlayerControll : MonoBehaviour {
 
 		//cooldown
 		delayEletrico += Time.deltaTime;
+		delayShoot += Time.deltaTime;
 		//Debug.Log(delayEletrico);
 
+		if(Input.GetKey(KeyCode.W) && delayShoot>1f)
+		{
+			delayShoot = 0f;
+			Instantiate(shoot, new Vector3(hero.position.x+0.5f, hero.position.y,1f),Quaternion.identity);			
+		}
 
 
-		if(Input.GetKey(KeyCode.E) && mana>10.0f && !Anime.GetBool("Walk"))
+		if(Input.GetKey(KeyCode.E) && mana>10.0f && !Anime.GetBool("Walk") && delayEletrico>1f)
 		{
 			Anime.SetBool("Attack_Eletrico",true);
 			mana = mana -5;
@@ -109,19 +119,26 @@ public class PlayerControll : MonoBehaviour {
 			audioPlayer.Play();
 
 		}
-		else 
-			Anime.SetBool("Attack_Eletrico", false);
+	//	else {
+	//		if(Anime.GetBool("Attack_Eletrico") == false)Anime.SetBool("Attack_Eletrico", false);
+		//}
 	}
 
 	void reduzirMana(float valor){
-		if(manaBar.rect.width <= 0)
-			Debug.Log("Voce esta sem mana");
-		else
-		{
-			mana-=valor;
-			manaBar.sizeDelta = new Vector2(mana,15.2f);
-			manaBar.position = new Vector3(manaBar.position.x-valor, manaBar.position.y);
-			
+		if(valor ==-1) {
+			Anime.SetBool("Attack_Eletrico", false);
+		}
+		else{
+			if(manaBar.rect.width <= 0){
+				Debug.Log("Voce esta sem mana");
+			}
+			else
+			{
+				mana-=valor;
+				manaBar.sizeDelta = new Vector2(mana,15.2f);
+				manaBar.position = new Vector3(manaBar.position.x-valor, manaBar.position.y);
+				
+			}
 		}
 	}
 

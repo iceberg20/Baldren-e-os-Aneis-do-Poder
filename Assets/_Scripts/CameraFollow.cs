@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour {
 	private float shakePower;
 	private float shakeAmount = 0.03f;
 	private float initial_y;
+	private AudioSource audioPlayer;
 	
 	private Transform player;        // Reference to the player's transform.
 	
@@ -27,6 +28,7 @@ public class CameraFollow : MonoBehaviour {
 		camera = gameObject.GetComponent<Transform>(); 
 		follow = true;
 		initial_y = camera.position.y;
+		audioPlayer = GetComponent<AudioSource>();
 	}
 	
 
@@ -62,6 +64,7 @@ public class CameraFollow : MonoBehaviour {
 
 		//Let's shake
 		if(shakeTimer >=0 && hero.position.x > 13f){
+			audioPlayer.Play();
 			Vector2 shakePos = Random.insideUnitCircle * shakeAmount;
 			shakeTimer-= Time.deltaTime;
 			camera.position = new Vector3(camera.position.x+shakePos.x,camera.position.y+shakePos.y, camera.position.z);

@@ -9,10 +9,18 @@ public class FireBalll : MonoBehaviour {
 	public GameObject fb;
 	private GameObject lifeObject;
 	private Transform life_bar;
+	private Rigidbody2D rb;
+	private GameObject plat;
+	private BoxCollider2D platColl;
 
 
 
 	// Use this for initialization	
+	void Wake()
+	{
+		plat = GameObject.FindWithTag("Plataforma");
+		platColl = plat.GetComponent<BoxCollider2D>();
+	}
 	void Start () {
 		t = gameObject.GetComponent<Transform>();
 		fireBall = gameObject.GetComponent<BoxCollider2D>();
@@ -20,16 +28,26 @@ public class FireBalll : MonoBehaviour {
 		heroColl = hero.GetComponent<BoxCollider2D>();
 		lifeObject = GameObject.FindGameObjectWithTag("Life");
 		life_bar = lifeObject.GetComponent<Transform>();
+		rb = gameObject.GetComponent<Rigidbody2D>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(fireBall.IsTouching(platColl)){
+			Destroy(fb);
+		}
+
 		t.Translate(Vector3.left* (Time.deltaTime*3) );
+	
+
 
 		if(fireBall.IsTouching(heroColl)){
 			reduzirVida(0.02f);
 			Destroy(fb);
 		}
+
+
 
 		if(t.position.x<11.6f)
 			Destroy(fb);
