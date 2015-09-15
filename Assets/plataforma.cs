@@ -27,7 +27,7 @@ public class plataforma : MonoBehaviour {
 			else{
 				dragonScript.startFire();
 				if(qtdStone <10) {
-					Instantiate(stone,new Vector3(11.2f,qtdStone,0f),Quaternion.identity );
+					Instantiate(stone,new Vector3(11.5f,qtdStone,0f),Quaternion.identity );
 					qtdStone+=1;
 				}
 

@@ -14,11 +14,10 @@ public class FireBalll : MonoBehaviour {
 	private BoxCollider2D platColl;
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Plataforma")
+		if (coll.gameObject.tag == "Plataforma" || coll.gameObject.tag == "IceShot")
 		Destroy(gameObject);
 		
 	}
-
 
 
 	// Use this for initialization	
@@ -58,7 +57,7 @@ public class FireBalll : MonoBehaviour {
 		}
 
 
-		if(t.position.x<11.6f)
+		if(t.position.x<12f)
 			Destroy(fb);
 
 	}
