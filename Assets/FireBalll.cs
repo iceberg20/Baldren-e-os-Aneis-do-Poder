@@ -13,6 +13,12 @@ public class FireBalll : MonoBehaviour {
 	private GameObject plat;
 	private BoxCollider2D platColl;
 
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Plataforma")
+		Destroy(gameObject);
+		
+	}
+
 
 
 	// Use this for initialization	
@@ -34,9 +40,8 @@ public class FireBalll : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(fireBall.IsTouching(platColl)){
-			Destroy(fb);
-		}
+
+		Debug.Log("colidiu");
 
 		t.Translate(Vector3.left* (Time.deltaTime*3) );
 	
@@ -47,6 +52,10 @@ public class FireBalll : MonoBehaviour {
 			Destroy(fb);
 		}
 
+		if(fireBall.IsTouching(platColl)){
+			Destroy(fb);
+			
+		}
 
 
 		if(t.position.x<11.6f)

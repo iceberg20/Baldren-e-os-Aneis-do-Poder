@@ -8,13 +8,6 @@ public class ice_shoot : MonoBehaviour {
 	private BoxCollider2D shotColl;
 
 
-	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "FireBall")
-			fireBall = GameObject.FindWithTag("FireBall");
-			Destroy(fireBall);
-		
-	}
-
 	// Use this for initialization
 	void Start () {
 		shoot = gameObject.GetComponent<Transform>();

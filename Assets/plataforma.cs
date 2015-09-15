@@ -2,11 +2,16 @@
 using System.Collections;
 
 public class plataforma : MonoBehaviour {
+
 	public Transform camera;
 	private Transform plat;
 	public DragonBoss dragonScript;
 	public GameObject stone;
 	private float qtdStone =0f;
+	private GameObject fireBall;
+
+
+
 	// Use this for initialization
 	void Start () {
 		plat = gameObject.GetComponent<Transform>();

@@ -1,29 +1,11 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FireBalll.cs">
     <Files>
-      <File FileName="Assets\_Scripts\StartGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\QuitGame.cs" Line="34" Column="3" />
-      <File FileName="Assets\_Scripts\PlayerControll.cs" Line="103" Column="45" />
-      <File FileName="Assets\_Scripts\EnemyColision.cs" Line="1" Column="1" />
-      <File FileName="Assets\DragonBoss.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\CameraFollow.cs" Line="1" Column="1" />
-      <File FileName="Assets\plataforma.cs" Line="24" Column="23" />
-      <File FileName="Assets\ice_shoot.cs" Line="13" Column="20" />
-      <File FileName="Assets\FireBalll.cs" Line="22" Column="49" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ice_shoot.cs">
-    <Files>
-      <File FileName="Assets\_Scripts\PlayerControll.cs" Line="146" Column="18" />
-      <File FileName="Assets\_Scripts\EnemyColision.cs" Line="1" Column="1" />
-      <File FileName="Assets\DragonBoss.cs" Line="23" Column="104" />
-      <File FileName="Assets\_Scripts\CameraFollow.cs" Line="1" Column="1" />
-      <File FileName="Assets\plataforma.cs" Line="1" Column="1" />
-      <File FileName="Assets\ice_shoot.cs" Line="25" Column="22" />
-      <File FileName="Assets\FireBalll.cs" Line="1" Column="1" />
->>>>>>> origin/master
+      <File FileName="Assets\plataforma.cs" Line="13" Column="1" />
+      <File FileName="Assets\ice_shoot.cs" Line="9" Column="1" />
+      <File FileName="Assets\DragonBoss.cs" Line="11" Column="2" />
+      <File FileName="Assets\FireBalll.cs" Line="22" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
