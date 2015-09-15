@@ -100,7 +100,8 @@ public class PlayerControll : MonoBehaviour {
 		delayShoot += Time.deltaTime;
 		//Debug.Log(delayEletrico);
 
-		if(Input.GetKey(KeyCode.W) && delayShoot>1f)
+
+		if(Input.GetKey(KeyCode.W) && delayShoot>0.5f)
 		{
 			delayShoot = 0f;
 			Instantiate(shoot, new Vector3(hero.position.x+0.5f, hero.position.y,1f),Quaternion.identity);			
